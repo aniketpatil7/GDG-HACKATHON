@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Worst Volume Controls</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,9 +17,10 @@
             <button class="mode-btn" data-mode="shaker">📳 Shaker</button>
             <button class="mode-btn" data-mode="math">🧠 Math</button>
             <button class="mode-btn" data-mode="weather">🌦️ Weather</button>
+            <button class="mode-btn" data-mode="handwriting">✍️ Digit</button>
         </div>
 
-        <h1 id="mode-title">THE VOLUME NIGHTMARE</h1>
+        <h1 id="mode-title">The RNG Volume Special</h1>
         <p id="mode-description">You don't choose the volume. The volume chooses you.</p>
 
         <video controls loop autoplay muted src="https://www.w3schools.com/html/mov_bbb.mp4" id="media-player"></video>
@@ -28,6 +30,7 @@
         </div>
 
         <div class="controls-wrapper">
+            
             <div id="rng-controls" class="control-panel">
                 <button id="change-volume-btn">Try to Change Volume</button>
             </div>
@@ -57,6 +60,15 @@
             <div id="weather-controls" class="control-panel hidden">
                 <p id="weather-info" class="small-text">Volume is based on the temperature somewhere in the world.</p>
                 <button id="weather-btn">Update from Weather</button>
+            </div>
+
+            <div id="handwriting-controls" class="control-panel hidden">
+                <p id="model-status" class="small-text">Loading ML Model...</p>
+                <canvas id="digit-canvas" width="280" height="280"></canvas>
+                <div class="canvas-buttons">
+                    <button id="detect-btn">Detect Digit</button>
+                    <button id="clear-btn">Clear</button>
+                </div>
             </div>
 
         </div>
