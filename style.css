@@ -124,3 +124,27 @@ textarea, input[type="number"] {
 #math-submit {
     margin-top: 15px;
 }
+
+/* Handwriting Canvas Styling */
+#digit-canvas {
+    background-color: #fff;
+    border-radius: 8px;
+    cursor: crosshair;
+    margin: 10px auto;
+    touch-action: none; /* Prevents page scrolling while drawing on mobile */
+}
+
+.canvas-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+#clear-btn {
+    background-color: #6c757d; /* A neutral gray */
+}
+
+#clear-btn:hover {
+    background-color: #5a6268;
+}
