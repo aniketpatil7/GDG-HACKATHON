@@ -3,26 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Worst Volume Control</title>
+    <title>The Worst Volume Controls</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="container">
-        <h1>The RNG Volume Special 🎲</h1>
-        <p>You don't choose the volume. The volume chooses you.</p>
+        <div class="mode-selector">
+            <button class="mode-btn active" data-mode="rng">🎲 RNG</button>
+            <button class="mode-btn" data-mode="snail">🐌 Snail</button>
+            <button class="mode-btn" data-mode="typewriter">⌨️ Type</button>
+            <button class="mode-btn" data-mode="shaker">📳 Shaker</button>
+            <button class="mode-btn" data-mode="math">🧠 Math</button>
+            <button class="mode-btn" data-mode="weather">🌦️ Weather</button>
+        </div>
 
-        <video controls loop autoplay muted src="https://www.youtube.com/watch?v=dQw4w9WgXcQ" id="media-player"></video>
-        <p class="small-text">(Click play and unmute the video first!)</p>
+        <h1 id="mode-title">THE VOLUME NIGHTMARE</h1>
+        <p id="mode-description">You don't choose the volume. The volume chooses you.</p>
 
+        <video controls loop autoplay muted src="https://www.w3schools.com/html/mov_bbb.mp4" id="media-player"></video>
+        
         <div class="volume-display">
             Current Volume: <span id="volume-level">???</span>%
         </div>
 
-        <button id="change-volume-btn">Try to Change Volume</button>
+        <div class="controls-wrapper">
+            <div id="rng-controls" class="control-panel">
+                <button id="change-volume-btn">Try to Change Volume</button>
+            </div>
+
+            <div id="snail-controls" class="control-panel hidden">
+                <input type="range" id="snail-slider" min="0" max="100" value="50" class="slider">
+            </div>
+
+            <div id="typewriter-controls" class="control-panel hidden">
+                 <p class="small-text">Type this sentence perfectly:</p>
+                 <p id="sentence-to-type" class="sentence">The quick brown fox jumps over the lazy dog.</p>
+                 <textarea id="typewriter-input" rows="3" placeholder="Start typing here..."></textarea>
+            </div>
+
+            <div id="shaker-controls" class="control-panel hidden">
+                <p class="small-text">Works on mobile devices. Shake your phone to increase the volume!</p>
+                <button id="permission-btn">Enable Shaker</button>
+            </div>
+            
+            <div id="math-controls" class="control-panel hidden">
+                <p class="small-text">Solve for a reasonable volume. Get it wrong for max volume.</p>
+                <p id="math-problem" class="sentence"></p>
+                <input type="number" id="math-answer" placeholder="Your answer...">
+                <button id="math-submit">Submit</button>
+            </div>
+            
+            <div id="weather-controls" class="control-panel hidden">
+                <p id="weather-info" class="small-text">Volume is based on the temperature somewhere in the world.</p>
+                <button id="weather-btn">Update from Weather</button>
+            </div>
+
+        </div>
     </div>
 
     <script src="script.js"></script>
 </body>
-
 </html>
